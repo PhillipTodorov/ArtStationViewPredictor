@@ -3,7 +3,6 @@ import json
 from distutils.debug import DEBUG
 
 import requests
-from bs4 import Tag
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.service import Service

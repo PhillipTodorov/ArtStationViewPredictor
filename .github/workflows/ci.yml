@@ -18,11 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Semantic Release pt.1
-        run: pip install --upgrade pip
-        run: pip install --upgrade setuptools
-        run: pip install python-semantic-release
-        run: git config user.name github-actions
-        run: git config user.email github-actions@github.com
+        run: |
+          pip install --upgrade pip
+          pip install --upgrade setuptools
+          pip install python-semantic-release
+          git config user.name github-actions
+          git config user.email github-actions@github.com
       - name: Semantic Release pt.2
         run: semantic-release publish   
             

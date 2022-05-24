@@ -30,6 +30,10 @@ jobs:
       - name: Semantic Release pt.6
         run: git config user.email github-actions@github.com
       - name: Semantic Release pt.7
-        run: semantic-release publish             
-          
+        run: semantic-release publish 
+        with:     
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository_username: __token__
+          repository_password: ${{ secrets.PYPI_TOKEN }}     
+            
           

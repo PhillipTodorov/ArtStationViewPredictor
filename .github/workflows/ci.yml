@@ -18,22 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Semantic Release pt.1
-        run:  pip install --upgrade pip
-      - name: Semantic Release pt.2
-        run:  pip install --upgrade pip
-      - name: Semantic Release pt.3
-        run:  pip install --upgrade setuptools
-      - name: Semantic Release pt.4
-        run:  pip install python-semantic-release
-      - name: Semantic Release pt.5
+        run: pip install --upgrade pip
+        run: pip install --upgrade setuptools
+        run: pip install python-semantic-release
         run: git config user.name github-actions
-      - name: Semantic Release pt.6
         run: git config user.email github-actions@github.com
-      - name: Semantic Release pt.7
-        uses: semantic-release publish 
-        with:     
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository_username: __token__
-          repository_password: ${{ secrets.PYPI_TOKEN }}     
+      - name: Semantic Release pt.2
+        run: semantic-release publish   
             
           

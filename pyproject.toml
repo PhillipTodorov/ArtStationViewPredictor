@@ -4,7 +4,7 @@ version = "0.1.0"
 
 [tool.semantic_release]
 version_variable = [
-    "src_folder/setup.py:__version__",
+    "setup.py:__version__",
     "pyproject.toml:version"
 ]
 

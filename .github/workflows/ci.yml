@@ -8,18 +8,22 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   Release:
     # https://github.community/t/how-do-i-specify-job-dependency-running-in-another-workflow/16482
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - uses: actions/setup-python@v2
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Github token
         uses: relekang/python-semantic-release@master
-        with:
+        with: 
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Semantic Release pt.1
         run:  pip install --upgrade pip
@@ -38,6 +42,7 @@ jobs:
           semantic-release publish 
           semantic-release changelog
           semantic-release print-version
+          
 
 
         

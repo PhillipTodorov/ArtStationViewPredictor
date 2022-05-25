@@ -1,6 +1,10 @@
 [tool.poetry]
 name = "your-project"
 version = "0.2.0"
+description = "Predicting the number of likes on a post"
+authors = ["Phillip Todorov <ph.todorov@yahoo.co.uk>"]
+license = "MIT"
+readme = "README.md"
 
 [tool.semantic_release]
 version_variable = [

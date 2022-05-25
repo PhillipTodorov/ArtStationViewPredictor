@@ -30,7 +30,10 @@ jobs:
       - name: Semantic Release pt.6
         run: git config user.email github-actions@github.com
       - name: Semantic Release pt.7
-        run: semantic-release publish        
+        run: |
+        semantic-release publish 
+        semantic-release changelog
+        semantic-release print-version
 
 
         

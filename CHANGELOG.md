@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2022-05-25)
+### Fix
+* Added description to poetry ([`d32209e`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/d32209ec4c6cd0baba59d97a0cecaa573e27f94d))
+
 ## v0.2.0 (2022-05-25)
 ### Feature
 * Added another workflow file ([`8c7b1b9`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/8c7b1b912367b0ecb5be0269828b9e597ca9affd))

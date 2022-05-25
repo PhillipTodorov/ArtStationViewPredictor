@@ -2,6 +2,8 @@ name: Semantic Release
 
 on: push
 
+permissions: write-all
+
 jobs:
   release:
     runs-on: ubuntu-latest

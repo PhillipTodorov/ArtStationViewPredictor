@@ -19,7 +19,9 @@ version_toml = [
 
 tag_commit = true
 
-
+packages = [
+    { include = "ArtStation_DS_Project" }
+]
 major_on_zero = false
 branch = "main"
 upload_to_pypi = false

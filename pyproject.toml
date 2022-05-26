@@ -5,7 +5,7 @@ description = "Predicting the number of likes on a post"
 authors = ["Phillip Todorov <ph.todorov@yahoo.co.uk>"]
 license = "MIT"
 readme = "README.md"
-version = "0.2.1"
+
 
 
 [tool.semantic_release]
@@ -16,6 +16,11 @@ version_variable = [
 version_toml = [
     "pyproject.toml:tool.poetry.version"
 ]
+
+tag_commit = true
+commit_parser = semantic_release.history.emoji_parser()
+
+
 
 major_on_zero = false
 branch = "main"

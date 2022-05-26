@@ -1,5 +1,9 @@
 [tool.poetry]
 name = "your-project"
+<<<<<<< HEAD
+=======
+version = "0.3.0"
+>>>>>>> da5967bf34fa1736dd38b375c556f669419f05c6
 description = "Predicting the number of likes on a post"
 authors = ["Phillip Todorov <ph.todorov@yahoo.co.uk>"]
 license = "MIT"

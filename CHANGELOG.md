@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2022-05-25)
+### Feature
+* Adding feature ([`5ec8b24`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/5ec8b24a143858c4d6042bc2147701fd2573335e))
+
 ## v0.2.1 (2022-05-25)
 ### Fix
 * Added description to poetry ([`d32209e`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/d32209ec4c6cd0baba59d97a0cecaa573e27f94d))

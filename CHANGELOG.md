@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.2 (2022-05-26)
+### Fix
+* Removed install dependencies ([`53f72db`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/53f72dbf0d14c6017c6b0aae39ffdbaa9f2344c7))
+
 ## v0.3.1 (2022-05-26)
 ### Fix
 * Removed commit_parser variable ([`b71f4de`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/b71f4de61075df7bd815bcb7b48b920e91e046d0))

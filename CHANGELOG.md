@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.1 (2022-05-26)
+### Fix
+* Removed commit_parser variable ([`b71f4de`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/b71f4de61075df7bd815bcb7b48b920e91e046d0))
+* Fixed commit_parser ([`5c8a3c9`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/5c8a3c9069e2697f7f4b9851c3ea4957e70dbcf5))
+* Added to tools.semantic_release and CI ([`b1a22ca`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/b1a22ca935ab07c9d6585e579ec487e515010c61))
+* Test ([`2cd5a0d`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/2cd5a0d9473a2c707d422095e6b86cd7e3b69a01))
+* Pyproject ([`6a12488`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/6a12488fb50d9ec9977f593544b81061a4efb6cf))
+
 ## v0.3.0 (2022-05-25)
 ### Feature
 * Adding feature ([`5ec8b24`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/5ec8b24a143858c4d6042bc2147701fd2573335e))

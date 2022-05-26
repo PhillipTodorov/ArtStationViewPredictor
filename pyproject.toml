@@ -18,8 +18,6 @@ version_toml = [
 ]
 
 tag_commit = true
-commit_parser = [semantic_release.history.emoji_parser()]
-
 
 
 major_on_zero = false

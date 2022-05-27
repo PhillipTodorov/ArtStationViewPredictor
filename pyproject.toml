@@ -5,7 +5,10 @@ description = "Predicting the number of likes on a post"
 authors = ["Phillip Todorov <ph.todorov@yahoo.co.uk>"]
 license = "MIT"
 readme = "README.md"
-
+packages = [
+    { include = "my-package" },
+    { include = "my-package/**/*.py" },
+]
 
 
 [tool.semantic_release]
@@ -19,9 +22,7 @@ version_toml = [
 
 tag_commit = true
 
-packages = [
-    { include = "ArtStation_DS_Project" }
-]
+
 major_on_zero = false
 branch = "main"
 upload_to_pypi = false

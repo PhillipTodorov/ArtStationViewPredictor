@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.5 (2022-05-27)
+### Fix
+* Included "my-package" in packages for poetry ([`26ca9ca`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/26ca9ca932fb05ab55d8ecd9578435e7c4f2ef67))
+
 ## v0.3.4 (2022-05-26)
 ### Fix
 * Added self package in toml file ([`da67f97`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/da67f970a96efd74d76965447225e6ce15b3ba22))

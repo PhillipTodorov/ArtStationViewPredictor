@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.6 (2022-05-27)
+### Fix
+* Changed pip3 to pip ([`f7d0a97`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/f7d0a975dceb0bb73d16c21773bf68c34b27321d))
+
 ## v0.3.5 (2022-05-27)
 ### Fix
 * Included "my-package" in packages for poetry ([`26ca9ca`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/26ca9ca932fb05ab55d8ecd9578435e7c4f2ef67))

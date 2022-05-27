@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.4 (2022-05-26)
+### Fix
+* Added self package in toml file ([`da67f97`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/da67f970a96efd74d76965447225e6ce15b3ba22))
+
 ## v0.3.3 (2022-05-26)
 ### Fix
 * Pip3 install poetry ([`6053923`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/60539233748fb04d99685d879a09647c914e02e6))

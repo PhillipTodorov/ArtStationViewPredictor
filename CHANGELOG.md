@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.7 (2022-05-27)
+### Fix
+* Moved relevant files into src/project ([`18ea16a`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/18ea16ab0f9d26c075aaffbda62eef830bf286e0))
+
 ## v0.3.6 (2022-05-27)
 ### Fix
 * Changed pip3 to pip ([`f7d0a97`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/f7d0a975dceb0bb73d16c21773bf68c34b27321d))

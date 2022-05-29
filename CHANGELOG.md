@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.8 (2022-05-29)
+### Fix
+* Added Quality step in CI ([`f2e45df`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/f2e45dfb011717c60dad6be5bfe169a69811ac53))
+
 ## v0.3.7 (2022-05-27)
 ### Fix
 * Moved relevant files into src/project ([`18ea16a`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/18ea16ab0f9d26c075aaffbda62eef830bf286e0))

@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.9 (2022-05-29)
+### Fix
+* Disabled poetry from making a virtual environment ([`aa794df`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/aa794df52cc91fc0689465606928a8696521b512))
+
 ## v0.3.8 (2022-05-29)
 ### Fix
 * Added Quality step in CI ([`f2e45df`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/f2e45dfb011717c60dad6be5bfe169a69811ac53))

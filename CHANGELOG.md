@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2022-06-01)
+### Feature
+* Test commit ([`e27bc6d`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/e27bc6dabbecdccf3de38b348a4dcbea1a8cf788))
+* Test commit ([`0856c4e`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/0856c4eda7cef39b94140dabc1b06449e52097b6))
+
+### Fix
+* Changed  commitizen version bumping ([`0c061dd`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/0c061ddb7be0a3e02191680d1325ec5bbbe28197))
+
 ## v0.3.9 (2022-05-29)
 ### Fix
 * Disabled poetry from making a virtual environment ([`aa794df`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/aa794df52cc91fc0689465606928a8696521b512))

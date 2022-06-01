@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## 0.5.0 (2022-06-01)
+
+### Fix
+
+- commitizen
+
 ## v0.4.0 (2022-06-01)
 ### Feature
 * Test commit ([`e27bc6d`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/e27bc6dabbecdccf3de38b348a4dcbea1a8cf788))

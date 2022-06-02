@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## 0.5.2 (2022-06-02)
+
+### Fix
+
+- cleaned up more files
+
 ## 0.5.1 (2022-06-02)
 
 ### Fix

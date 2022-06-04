@@ -27,7 +27,8 @@ artstation_community = Website_Community(
 
 
 def main():
-
+    # scrape_artwork_variables()
+    util.get_hrefs()
     pass
 
 

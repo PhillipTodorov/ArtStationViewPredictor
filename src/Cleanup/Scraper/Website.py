@@ -62,7 +62,7 @@ class Artwork(Website):
         tags: list[str] = [],
         no_of_skills: int = 0,
         software_used: list[str] = [],
-        csv_file: str = r"Cleanup\Scraper\artwork.csv",
+        csv_file: str = "src/Cleanup/Scraper/artwork.csv",
         driver: str = " ",
     ):
         Website.__init__(self, URL, csv_file, driver)

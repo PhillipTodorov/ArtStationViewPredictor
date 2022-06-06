@@ -8,13 +8,12 @@ from Website import Artwork
 def get_hrefs():  # -> list[str]:
     artwork = Artwork(URL="")
     # print(artwork.csv_file)
-
+    href_list = []
     with open(artwork.csv_file, "r", encoding="utf-8", newline="") as f:
         artworkreader = reader(f)
-        print(artworkreader)
-        return artworkreader
-
-    pass
+        for row in artworkreader:
+            href_list.appen(row[0])
+    return href_list
 
 
 def save_artwork_to_csv(artwork: Artwork, csv_file: str = None, DEBUG=False):

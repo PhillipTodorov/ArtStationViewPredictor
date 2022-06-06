@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from scraper_variables import artwork_variables_csv_path
 
 # flake8: noqa=F821
 
@@ -35,6 +36,7 @@ class Website_Community(Website):
         URL: str = "",
         csv_file: str = "",
         driver: str = "",
+        # TODO: describe what element_path and element_type represent
         element_path: str = "",
         element_type: str = "",
     ):
@@ -62,7 +64,7 @@ class Artwork(Website):
         tags: list[str] = [],
         no_of_skills: int = 0,
         software_used: list[str] = [],
-        csv_file: str = "src/Cleanup/Scraper/artwork.csv",
+        csv_file: str = artwork_variables_csv_path,
         driver: str = " ",
     ):
         Website.__init__(self, URL, csv_file, driver)

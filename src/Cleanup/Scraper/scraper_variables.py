@@ -1,3 +1,5 @@
+# flake8: noqa=F501
+
 artstation_community_csv_path = "src/Cleanup/Scraper/Artstation_community.csv"
 webdriver_used = "webdriver.Firefox()"
 community_url = "https://www.artstation.com/?sort_by=community"

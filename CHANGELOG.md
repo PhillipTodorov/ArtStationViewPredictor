@@ -1,6 +1,12 @@
-# Changelog
+## Unreleased
 
-<!--next-version-placeholder-->
+### Refactor
+
+- Moved relevant files in cleanup/scraper directory
+
+### Fix
+
+- cleaned up more files
 
 ## 0.5.1 (2022-06-02)
 
@@ -15,76 +21,105 @@
 - commitizen
 
 ## v0.4.0 (2022-06-01)
-### Feature
-* Test commit ([`e27bc6d`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/e27bc6dabbecdccf3de38b348a4dcbea1a8cf788))
-* Test commit ([`0856c4e`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/0856c4eda7cef39b94140dabc1b06449e52097b6))
+
+### Feat
+
+- test commit
+- test commit
 
 ### Fix
-* Changed  commitizen version bumping ([`0c061dd`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/0c061ddb7be0a3e02191680d1325ec5bbbe28197))
+
+- changed  commitizen version bumping
 
 ## v0.3.9 (2022-05-29)
+
 ### Fix
-* Disabled poetry from making a virtual environment ([`aa794df`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/aa794df52cc91fc0689465606928a8696521b512))
+
+- disabled poetry from making a virtual environment
 
 ## v0.3.8 (2022-05-29)
+
 ### Fix
-* Added Quality step in CI ([`f2e45df`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/f2e45dfb011717c60dad6be5bfe169a69811ac53))
+
+- added Quality step in CI
 
 ## v0.3.7 (2022-05-27)
+
 ### Fix
-* Moved relevant files into src/project ([`18ea16a`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/18ea16ab0f9d26c075aaffbda62eef830bf286e0))
+
+- moved relevant files into src/project
 
 ## v0.3.6 (2022-05-27)
+
 ### Fix
-* Changed pip3 to pip ([`f7d0a97`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/f7d0a975dceb0bb73d16c21773bf68c34b27321d))
+
+- changed pip3 to pip
 
 ## v0.3.5 (2022-05-27)
+
 ### Fix
-* Included "my-package" in packages for poetry ([`26ca9ca`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/26ca9ca932fb05ab55d8ecd9578435e7c4f2ef67))
+
+- included "my-package" in packages for poetry
 
 ## v0.3.4 (2022-05-26)
+
 ### Fix
-* Added self package in toml file ([`da67f97`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/da67f970a96efd74d76965447225e6ce15b3ba22))
+
+- added self package in toml file
 
 ## v0.3.3 (2022-05-26)
+
 ### Fix
-* Pip3 install poetry ([`6053923`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/60539233748fb04d99685d879a09647c914e02e6))
+
+- pip3 install poetry
 
 ## v0.3.2 (2022-05-26)
+
 ### Fix
-* Removed install dependencies ([`53f72db`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/53f72dbf0d14c6017c6b0aae39ffdbaa9f2344c7))
+
+- removed install dependencies
 
 ## v0.3.1 (2022-05-26)
+
 ### Fix
-* Removed commit_parser variable ([`b71f4de`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/b71f4de61075df7bd815bcb7b48b920e91e046d0))
-* Fixed commit_parser ([`5c8a3c9`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/5c8a3c9069e2697f7f4b9851c3ea4957e70dbcf5))
-* Added to tools.semantic_release and CI ([`b1a22ca`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/b1a22ca935ab07c9d6585e579ec487e515010c61))
-* Test ([`2cd5a0d`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/2cd5a0d9473a2c707d422095e6b86cd7e3b69a01))
-* Pyproject ([`6a12488`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/6a12488fb50d9ec9977f593544b81061a4efb6cf))
+
+- removed commit_parser variable
+- fixed commit_parser
+- added to tools.semantic_release and CI
+- test
+- pyproject
 
 ## v0.3.0 (2022-05-25)
-### Feature
-* Adding feature ([`5ec8b24`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/5ec8b24a143858c4d6042bc2147701fd2573335e))
+
+### Feat
+
+- adding feature
 
 ## v0.2.1 (2022-05-25)
+
 ### Fix
-* Added description to poetry ([`d32209e`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/d32209ec4c6cd0baba59d97a0cecaa573e27f94d))
+
+- added description to poetry
 
 ## v0.2.0 (2022-05-25)
-### Feature
-* Added another workflow file ([`8c7b1b9`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/8c7b1b912367b0ecb5be0269828b9e597ca9affd))
-* Added another workflow file ([`d911256`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/d91125645a8c3bd4710dfbb99cfad2e7792a4692))
-* **CI:** Added github token ([`ad19dc1`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/ad19dc180d966261fe9d8de65ea43e84f0b38572))
-* **CI:** Fixed indentation ([`aa41db2`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/aa41db2af591e2c9ac6dfdfb251c838224919ff4))
-* **CI:** Added changelog and print-version ([`b4b8665`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/b4b8665caf5e2256034e6e4390bbf5a0395e372a))
 
 ### Fix
-* Added write all permission ([`8835117`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/8835117b20df18439494ebcee196c82bb9ba1404))
-* Test ([`2f3d5b0`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/2f3d5b0c4b9a15053f457c4d5f3499ca40ef0aac))
-* **CI:** Semantic release publish fix 5 ([`43c8bd6`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/43c8bd63b138e4a69cc2e2ec1091fa7c3affeac7))
-* **CI:** Semantic release publish fix 4 ([`423c909`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/423c909719f42f498654bb7346456ae2bb5050a2))
-* **CI:** Semantic release publish fix 3 ([`a97c050`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/a97c05019fec78b433edbd1da44cc976c291ecc9))
-* **CI:** Semantic-release publish fix 2 ([`37455f1`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/37455f19659f4427f5022d4c8d7599602af47e3b))
-* **CI:** Semantic release publish fix ([`4133568`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/4133568975c81bd5051fe403c51a4b710d85971f))
-* **CI:** Added github token to ci config ([`1ac859f`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/1ac859fb74d6955fcaeef770cb021d52539729a1))
-* **test:** Test to see if increment is working properly ([`25811c6`](https://github.com/PhillipTodorov/ArtStation_DS_Project/commit/25811c6f013e49123e9d644fbd72deb4fbf3078e))
+
+- added write all permission
+- test
+- **CI**: semantic release publish fix 5
+- **CI**: semantic release publish fix 4
+- **CI**: semantic release publish fix 3
+- **CI**: semantic-release publish fix 2
+- **CI**: semantic release publish fix
+- **CI**: added github token to ci config
+- **test**: test to see if increment is working properly
+
+### Feat
+
+- added another workflow file
+- added another workflow file
+- **CI**: added github token
+- **CI**: fixed indentation
+- **CI**: added changelog and print-version
+- scraper functionality added

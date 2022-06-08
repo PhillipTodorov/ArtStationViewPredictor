@@ -5,14 +5,17 @@ from xmlrpc.client import Boolean
 from Website import Artwork
 
 
-def get_hrefs():  # -> list[str]:
+def get_hrefs(DEBUG=False):  # -> list[str]:
     artwork = Artwork(URL="")
-    # print(artwork.csv_file)
+    if DEBUG:
+        print(artwork.csv_file)
     href_list = []
     with open(artwork.csv_file, "r", encoding="utf-8", newline="") as f:
         artworkreader = reader(f)
         for row in artworkreader:
-            href_list.appen(row[0])
+            href_list.append(row[0])
+    if DEBUG:
+        print(f"Href list: {href_list}")
     return href_list
 
 

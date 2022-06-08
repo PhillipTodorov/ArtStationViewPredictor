@@ -24,8 +24,10 @@ class Website:
         return self.csv_file
 
     def instancate_driver(self):
-        if eval(self.driver) is not None:
-            self.driver = eval(self.driver)
+        print(self.driver)
+        if eval("webdriver.Firefox()") is not None:
+            self.driver = eval("webdriver.Firefox()")
+            print(type(self.driver))
         else:
             raise TypeError("driver not instanciated properly")
 
@@ -35,8 +37,10 @@ class Website_Community(Website):
         self,
         URL: str = "",
         csv_file: str = "",
+        # TODO:driver should not be str, it should be a driver object
         driver: str = "",
-        # TODO: describe what element_path and element_type represent
+        # element_path: the path to the element we want to extract ie "channel-project-list.ng-star-inserted > div:nth-child(1)"
+        # element_type: the format that the pathing takes ie By.CSS_SELECTOR
         element_path: str = "",
         element_type: str = "",
     ):

@@ -14,7 +14,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 import util
 from dataclass_util import scrape_artwork_variables
 from Website import Artwork, Website_Community
-from scraper_variables import artstation_community_csv_path, webdriver, community_url
+from scraper_variables import (
+    artstation_community_csv_path,
+    webdriver_used,
+    community_url,
+)
 
 # flake8: noqa=F821
 
@@ -24,13 +28,12 @@ artstation_community = Website_Community(
     element_path="channel-project-list.ng-star-inserted > div:nth-child(1)",
     element_type=By.CSS_SELECTOR,
     csv_file=artstation_community_csv_path,
-    driver=webdriver,
+    driver=webdriver_used,
 )
 
 
 def main():
     scrape_artwork_variables()
-    util.get_hrefs()
     pass
 
 

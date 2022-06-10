@@ -48,7 +48,11 @@ class Website_Community(Website):
         self.element_path = element_path
         self.element_type = element_type.lower()
 
-    def get_web_element(self):
+    def get_web_element(self, DEBUG=True):
+        if DEBUG:
+            print(
+                f"element_type: {self.element_type}, element_path: {self.element_path}"
+            )
         webelement = self.driver.find_element(
             by=self.element_type, value=self.element_path
         )
@@ -65,6 +69,7 @@ class Artwork(Website):
         URL: str,
         post_age_weeks: int = 0,
         views: int = 0,
+        likes: int = 0,
         tags: list[str] = [],
         no_of_skills: int = 0,
         software_used: list[str] = [],
@@ -74,6 +79,7 @@ class Artwork(Website):
         Website.__init__(self, URL, csv_file, driver)
         self.post_age_weeks = post_age_weeks
         self.views = views
+        self.likes = likes
         self.tags = tags
         self.no_of_skills = no_of_skills
         self.software_used = software_used
@@ -82,14 +88,14 @@ class Artwork(Website):
         return f"Artwork({self.URL},{self.post_age_weeks},{self.views},{self.tags},{self.no_of_skills},{self.software_used},{self.csv_file},{self.driver})"
 
     def attribute_tuple(self):
-        # returns a tuple of all variables in Artwork class
+        # returns a tuple of all variables in Artwork class (except driver)
         return (
             self.URL,
             self.post_age_weeks,
             self.views,
+            self.likes,
             self.tags,
             self.no_of_skills,
             self.software_used,
             self.csv_file,
-            self.driver,
         )

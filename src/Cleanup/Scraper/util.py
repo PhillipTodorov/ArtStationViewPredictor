@@ -1,8 +1,60 @@
 # flake8: noqa=F821
 from csv import reader, writer
+from genericpath import exists
 from xmlrpc.client import Boolean
-
+from os import remove
 from Website import Artwork
+from Website import Website_Community
+from scraper_variables import (
+    artwork_variables_csv_path,
+    webdriver_used,
+    likes_css_selector_path,
+)
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+
+
+def scrape_artwork_variables(DEBUG=True):
+    def extract_from_href_page(
+        href: str, artwork_website: Website_Community
+    ) -> tuple[str]:
+        "extract likes, views, comments and tags from main page"
+        artwork_website.element_path = likes_css_selector_path
+        likes = artwork_website.get_web_element()
+        views = "placeholder"
+        comments = "placeholder"
+        tags = ["placeholder"]
+        return (likes, views, comments, tags)
+        pass
+
+    def extract_from_profile_page():
+        pass
+
+    current_webdriver = eval(webdriver_used)  # instanciated webdriver
+    print(f"webdriver type: {current_webdriver}")
+    for href in get_hrefs():
+        current_webdriver.get(href)
+        artwork_dataclass = Artwork_variables()
+        artwork_website = Website_Community(
+            URL=href,
+            csv_file=artwork_variables_csv_path,
+            driver=current_webdriver,
+            # element_path: placeholder, replace with the 10
+            # variables on each iteration (inefficient)
+            element_path="",
+            element_type=By.CSS_SELECTOR,
+        )
+        (
+            artwork_dataclass.likes,
+            artwork_dataclass.views,
+            artwork_dataclass.comments,
+            artwork_dataclass.tags,
+        ) = extract_from_href_page(href, artwork_website)
+        extract_from_profile_page()
+        save_artwork_to_csv(
+            artwork_website,
+            artwork_website.csv_file,
+        )
 
 
 def get_hrefs(DEBUG=False):  # -> list[str]:
@@ -16,10 +68,13 @@ def get_hrefs(DEBUG=False):  # -> list[str]:
             href_list.append(row[0])
     if DEBUG:
         print(f"Href list: {href_list}")
-    return href_list
+    return href_list[1:]
 
 
 def save_artwork_to_csv(artwork: Artwork, csv_file: str = None, DEBUG=False):
+    """
+    wipes artwork.csv_file clean and adds header, then appends all
+    """
     if csv_file is None:
         csv_file = artwork.csv_file
 
@@ -29,6 +84,20 @@ def save_artwork_to_csv(artwork: Artwork, csv_file: str = None, DEBUG=False):
 
     if DEBUG:
         print(artwork.attribute_tuple())
+
+
+def initialise_csv(artwork: Artwork, header: str):
+    def delete_csv():
+        remove(artwork.csv_file)
+
+    def add_header_to_csv():
+        with open(artwork.csv_file, "a+", encoding="utf-8", newline="") as f:
+            writer_object = writer(f)
+            writer_object.writerow(header)
+
+    if exists(artwork.csv_file):
+        delete_csv()
+    add_header_to_csv()
 
 
 def append_hrefs_from_web_element_to_csv(web_element, csv_file_dir, DEBUG=False):

@@ -1,6 +1,7 @@
 import csv
 import json
 from distutils.debug import DEBUG
+from os.path import exists
 
 import requests
 from selenium import webdriver
@@ -12,12 +13,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 import util
-from dataclass_util import scrape_artwork_variables
+from util import scrape_artwork_variables
 from Website import Artwork, Website_Community
 from scraper_variables import (
     artstation_community_csv_path,
     webdriver_used,
     community_url,
+    artwork_variables_header,
 )
 
 # flake8: noqa=F821
@@ -33,7 +35,8 @@ artstation_community = Website_Community(
 
 
 def main():
-    scrape_artwork_variables()
+    # scrape_artwork_variables()
+    parse_HTML_for_href_save_to_csv()
     pass
 
 
@@ -54,10 +57,19 @@ def parse_HTML_for_href_save_to_csv():
     """
     Parses "Website_Community.csv_file" for hrefs and saves to csv file
     """
+
     href_list = util.parse_csv_for_href(artstation_community_csv_path)
-    for href in href_list:
-        href = Artwork(href)
-        util.save_artwork_to_csv(href)
+
+    for i, artwork in enumerate(href_list):
+        artwork = Artwork(artwork)
+        # wipe csv and add header only if this is the first href
+        if i == 0:
+            util.initialise_csv(
+                artwork,
+                artwork_variables_header,
+            )
+
+        util.save_artwork_to_csv(artwork)
 
 
 if __name__ == "__main__":

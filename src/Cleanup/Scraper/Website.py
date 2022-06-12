@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from scraper_variables import artwork_variables_csv_path
+from scraper_variables import artwork_variables_csv_path, webdriver_used
 
 # flake8: noqa=F821
 
@@ -23,11 +23,13 @@ class Website:
     def get_csv_file(self):
         return self.csv_file
 
-    def instancate_driver(self):
-        print(self.driver)
-        if eval("webdriver.Firefox()") is not None:
-            self.driver = eval("webdriver.Firefox()")
+    def instancate_driver(self, DEBUG=False):
+        if DEBUG:
+            print(self.driver)
             print(type(self.driver))
+        if eval(webdriver_used) is not None:
+            self.driver = webdriver.Firefox()
+
         else:
             raise TypeError("driver not instanciated properly")
 
@@ -47,20 +49,6 @@ class Website_Community(Website):
         Website.__init__(self, URL, csv_file, driver)
         self.element_path = element_path
         self.element_type = element_type.lower()
-
-    def get_web_element(self, DEBUG=True):
-        if DEBUG:
-            print(
-                f"element_type: {self.element_type}, element_path: {self.element_path}"
-            )
-        webelement = self.driver.find_element(
-            by=self.element_type, value=self.element_path
-        )
-
-        if webdriver is not None:
-            return webelement
-        else:
-            raise TypeError("Webelement should not be None")
 
 
 class Artwork(Website):

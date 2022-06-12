@@ -1,60 +1,97 @@
 # flake8: noqa=F821
+from asyncore import write
 from csv import reader, writer
+from distutils.debug import DEBUG
 from genericpath import exists
+from lib2to3.pgen2.driver import Driver
 from xmlrpc.client import Boolean
 from os import remove
+
+from tomlkit import value
 from Website import Artwork
 from Website import Website_Community
 from scraper_variables import (
     artwork_variables_csv_path,
+    artwork_variables_temp_csv_path,
     webdriver_used,
     likes_css_selector_path,
+    views_css_selector_path,
+    comments_css_selector_path,
+    tags_css_selector_path,
 )
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
-def scrape_artwork_variables(DEBUG=True):
-    def extract_from_href_page(
-        href: str, artwork_website: Website_Community
-    ) -> tuple[str]:
+def extract_from_href_and_profile_page(href: str, driver) -> tuple[str]:
+
+    artwork_website = Website_Community(
+        URL=href,
+        csv_file=artwork_variables_csv_path,
+        driver=webdriver_used,
+        # element_path: placeholder, replace with the 10
+        # variables on each iteration (inefficient)
+        element_path="",
+        element_type=By.CSS_SELECTOR,
+    )
+
+    def extract_from_href_page() -> tuple[str]:
+        driver.get(href)
         "extract likes, views, comments and tags from main page"
-        artwork_website.element_path = likes_css_selector_path
-        likes = artwork_website.get_web_element()
-        views = "placeholder"
-        comments = "placeholder"
+        likes = get_web_element_new(likes_css_selector_path, driver)[0].get_attribute(
+            "innerText"
+        )
+        views = get_web_element_new(views_css_selector_path, driver, DEBUG=True)[
+            0
+        ].get_attribute("innerText")
+        comments = get_web_element_new(comments_css_selector_path, driver, DEBUG=True)[
+            0
+        ].get_attribute("innerText")
         tags = ["placeholder"]
         return (likes, views, comments, tags)
-        pass
 
     def extract_from_profile_page():
         pass
 
-    current_webdriver = eval(webdriver_used)  # instanciated webdriver
-    print(f"webdriver type: {current_webdriver}")
-    for href in get_hrefs():
-        current_webdriver.get(href)
-        artwork_dataclass = Artwork_variables()
-        artwork_website = Website_Community(
-            URL=href,
-            csv_file=artwork_variables_csv_path,
-            driver=current_webdriver,
-            # element_path: placeholder, replace with the 10
-            # variables on each iteration (inefficient)
-            element_path="",
-            element_type=By.CSS_SELECTOR,
+    return extract_from_href_page()
+
+
+def save_into_temp_csv(
+    variables: tuple[str], temp_csv: str = artwork_variables_temp_csv_path
+) -> None:
+    with open(temp_csv, "a+", encoding="utf-8", newline="") as f:
+        writer_object = writer(f)
+        writer_object.writerow(variables)
+    pass
+
+
+def overwrite_Artwork_variables():
+    pass
+
+
+def get_web_element_new(
+    web_element: str, driver, web_element_type: str = By.CSS_SELECTOR, DEBUG=False
+):
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_all_elements_located((web_element_type, web_element))
+    )
+
+    if DEBUG:
+        print(f"web element type (util.py): {web_element_type}")
+        print(f"web element value (util.py): {web_element}")
+        print(f"1st element type (util.py): {type(element[0])}")
+        print(f"1st element (util.py): {element[0]}")
+        print(f"1st element tag_name (util.py): {element[0].tag_name}")
+        print(
+            f"1st element innerText (util.py): {element[0].get_attribute('innerText')}"
         )
-        (
-            artwork_dataclass.likes,
-            artwork_dataclass.views,
-            artwork_dataclass.comments,
-            artwork_dataclass.tags,
-        ) = extract_from_href_page(href, artwork_website)
-        extract_from_profile_page()
-        save_artwork_to_csv(
-            artwork_website,
-            artwork_website.csv_file,
+        print(
+            f"list of elements innerText(util.py): {[e.get_attribute('innerText') for e in element]}"
         )
+
+    return element
 
 
 def get_hrefs(DEBUG=False):  # -> list[str]:
@@ -86,6 +123,10 @@ def save_artwork_to_csv(artwork: Artwork, csv_file: str = None, DEBUG=False):
         print(artwork.attribute_tuple())
 
 
+def instanciate_driver():
+    return eval(webdriver_used)
+
+
 def initialise_csv(artwork: Artwork, header: str):
     def delete_csv():
         remove(artwork.csv_file)
@@ -111,11 +152,11 @@ def append_hrefs_from_web_element_to_csv(web_element, csv_file_dir, DEBUG=False)
 
     with open(csv_file_dir, "w", encoding="utf-8") as f:
         writer_object = writer(f)
-        print(f"web element type: {type(web_element)}")
         cleaned = clean_web_element(web_element.get_attribute("outerHTML"))
         writer_object.writerow(cleaned)
 
         if DEBUG:
+            print(f"web element type: {type(web_element)}")
             print(f"{csv_file_dir}'s content after write: {f.read()}")
 
 
@@ -135,8 +176,6 @@ def parse_csv_for_href(csv_file_dir: str, DEBUG: Boolean = False) -> list:
         href_values = []
 
         for tag in css_tags:
-            # print(tag)
-            # print(f"{tag[index_tag(tag, begin_string)+6 : index_tag(tag, end_string)]}")
             href_values.append(
                 tag[
                     index_tag(tag, begin_string["identifier"])

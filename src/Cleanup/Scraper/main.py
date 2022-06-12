@@ -13,13 +13,19 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 import util
-from util import scrape_artwork_variables
+from util import (
+    extract_from_href_and_profile_page,
+    save_into_temp_csv,
+    overwrite_Artwork_variables,
+    get_hrefs,
+)
 from Website import Artwork, Website_Community
 from scraper_variables import (
     artstation_community_csv_path,
     webdriver_used,
     community_url,
     artwork_variables_header,
+    likes_css_selector_path,
 )
 
 # flake8: noqa=F821
@@ -27,7 +33,7 @@ from scraper_variables import (
 
 artstation_community = Website_Community(
     URL=community_url,
-    element_path="channel-project-list.ng-star-inserted > div:nth-child(1)",
+    element_path=likes_css_selector_path,
     element_type=By.CSS_SELECTOR,
     csv_file=artstation_community_csv_path,
     driver=webdriver_used,
@@ -35,9 +41,23 @@ artstation_community = Website_Community(
 
 
 def main():
-    # scrape_artwork_variables()
-    parse_HTML_for_href_save_to_csv()
+    scrape_artwork_variables()
+    # parse_HTML_for_href_save_to_csv()
     pass
+
+
+def scrape_artwork_variables():
+    driver_instance = util.instanciate_driver()
+    print(f"driver type (main.py): {type(driver_instance)}")
+    try:
+        for href in get_hrefs():
+            (likes, views, comments, tags) = extract_from_href_and_profile_page(
+                href, driver_instance
+            )
+            save_into_temp_csv((href, likes, views, comments, tags))
+        overwrite_Artwork_variables()
+    finally:
+        artstation_community.quit()
 
 
 def get_HTML_from_community():

@@ -1,12 +1,19 @@
-## Unreleased
+## 0.6.0 (2022-06-12)
+
+### Feat
+
+- rewrote get web element func, refactored scrape artwork variables func
+- added header to artwork_variables
+- **util**: made get_href return list instead of one href
+- **scraper_variables**: created file that stores all variables referenced by multiple files
 
 ### Refactor
 
+- **artwork_dataclass**: removed artwork dataclass as it was unnesscary
+- **website**: removed absolute referencing
+- **main**: removed absolute referencing
+- renamed csv file
 - Moved relevant files in cleanup/scraper directory
-
-### Fix
-
-- cleaned up more files
 
 ## 0.5.2 (2022-06-02)
 
